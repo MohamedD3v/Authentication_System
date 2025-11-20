@@ -18,7 +18,7 @@ if(bearer !== "Bearer")return next(new Error("Missing token Type!!" , {cause:400
 
   const stored_token = await dbService.findOne({
     model: TokenModel,
-    filter: { token, isValid: true },
+    filter: { token },
   });
   if (!stored_token)
     return next(new Error("In-valid Token or expired", { cause: 404 }));

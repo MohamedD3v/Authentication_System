@@ -2,10 +2,12 @@ import { successResponse } from "../../Utils/successResponse.utils.js";
 import * as dbService from "../../Database/dbService.js";
 import { TokenModel } from "../../Database/Models/tokenModel.js";
 export const profile = async (req, res, next) => {
+  const user = req.user;
   return successResponse({
     res,
     statusCode: 200,
     message: "Fetching User...",
+    data: { user },
   });
 };
 
@@ -21,6 +23,6 @@ export const logout = async (req, res, next) => {
     res,
     statusCode: 200,
     message: "Token has been Revoked",
-    data: { stored_token },
+    data: { stored_token  },
   });
 };

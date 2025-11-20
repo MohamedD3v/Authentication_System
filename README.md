@@ -2,11 +2,6 @@
 
 This is a complete backend authentication system built with Node.js, Express, MongoDB.
 
-## APIS Used
-POST /auth/signup
-POST /auth/login
-GET /user/profile (Headers: Authorization)
-POST /user/logout (Headers: Authorization)
 
 ## Technologies Used 
 - Node.js
@@ -14,6 +9,27 @@ POST /user/logout (Headers: Authorization)
 - MongoDB (Mongoose)
 - JWT (JSON Web Tokens)
 - Bcrypt.js
+
+
+## APIS EndPoints 
+
+
+### 1. Auth Modules
+
+- POST api/auth/signup   ==> Register a New User.
+
+- POST api/auth/login    ==> Login and Generate JWT Token.
+
+
+### 2. User Modules
+
+**Note** Headers: Requires `authorization` header with value `Bearer <your_token>`
+
+- GET api/user/profile   ==> Get User Profile Info
+
+- POST api/user/revoke-token   ==> Logout User and Revoked token from Database
+
+
 
 ## How to Run 
 1. Clone the repo
