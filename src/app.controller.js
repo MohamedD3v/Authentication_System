@@ -1,7 +1,8 @@
 import { configDotenv } from "dotenv";
 import { connection } from "./Database/connection.js";
 import { errorHandler } from "./Middleware/errorHandler.middleware.js";
-import  authRoutes from "../src/Modules/Routes/AuthRouter/auth.routes.js";
+import authRoutes from "../src/Modules/Routes/auth.routes.js";
+import userRoutes from "../src/Modules/Routes/user.routes.js";
 configDotenv();
 
 export const bootstrap = async (app, express) => {
@@ -9,6 +10,7 @@ export const bootstrap = async (app, express) => {
   await connection();
 
   app.use("/api/auth", authRoutes);
+  app.use("/api/user", userRoutes);
 
   app.use(errorHandler);
 };
