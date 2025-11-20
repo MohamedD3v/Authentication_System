@@ -2,6 +2,12 @@
 
 This is a complete backend authentication system built with Node.js, Express, MongoDB.
 
+## APIS Used
+POST /auth/signup
+POST /auth/login
+GET /user/profile (Headers: Authorization)
+POST /user/logout (Headers: Authorization)
+
 ## Technologies Used 
 - Node.js
 - Express.js
