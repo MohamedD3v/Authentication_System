@@ -2,7 +2,9 @@ import { successResponse } from "../../Utils/successResponse.utils.js";
 import * as dbService from "../../Database/dbService.js";
 import { TokenModel } from "../../Database/Models/tokenModel.js";
 export const profile = async (req, res, next) => {
-  const user = req.user;
+  const user = req.user.toObject();
+  delete user.__v;
+  delete user.updatedAt;
   return successResponse({
     res,
     statusCode: 200,
@@ -23,6 +25,6 @@ export const logout = async (req, res, next) => {
     res,
     statusCode: 200,
     message: "Token has been Revoked",
-    data: { stored_token  },
+    data: { stored_token },
   });
 };
