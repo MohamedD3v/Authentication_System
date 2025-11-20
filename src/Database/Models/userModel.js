@@ -1,4 +1,4 @@
-import mongoose, { models } from "mongoose";
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
@@ -14,11 +14,16 @@ const userSchema = new mongoose.Schema(
         "Please fill a valid email address",
       ],
     },
-    password:{type:String , required:true , minlength:[6,]},
-    passwordConfirm:{type:String , required:true}
+    password: {
+      type: String,
+      required: true,
+      minlength: [6],
+      trim: true,
+      select: false,
+    },
   },
   { timestamps: true }
 );
 
-export const UserModel = mongoose.models.User || mongoose.model("User" , userSchema)
-
+export const UserModel =
+  mongoose.models.User || mongoose.model("User", userSchema);
