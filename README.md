@@ -9,9 +9,11 @@ This is a complete backend authentication system built with Node.js, Express, Mo
 - MongoDB (Mongoose)
 - JWT (JSON Web Tokens)
 - Bcrypt.js
+- NodeMailer.js
+- JOI Validation
 
 
-## APIS EndPoints 
+## APIS EndPoints
 
 
 ### 1. Auth Modules
@@ -19,6 +21,8 @@ This is a complete backend authentication system built with Node.js, Express, Mo
 - POST api/auth/signup   ==> Register a New User.
 
 - POST api/auth/login    ==> Login and Generate JWT Token.
+
+- PATCH api/auth/confirm-email  ==> Confirm email by OTP Code
 
 
 ### 2. User Modules
