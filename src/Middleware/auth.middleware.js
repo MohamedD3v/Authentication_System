@@ -33,6 +33,7 @@ export const isAuthenticated = async (req, res, next) => {
     return next();
   } catch (error) {
     if (error.message === "jwt expired")
-      return next(new Error("In-valid Token or expired" , {cause:401}));
+      return next(new Error("Token expired", { cause: 401 }));
   }
+  return next(new Error("In-valid Token", { cause: 500 }));
 };

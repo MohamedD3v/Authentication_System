@@ -21,6 +21,9 @@ const userSchema = new mongoose.Schema(
       trim: true,
       select: false,
     },
+    confirmEmail: { type: Boolean, default: false },
+    confirmEmailOTP: String,
+    expiresInOTP: Date,
   },
   { timestamps: true }
 );
